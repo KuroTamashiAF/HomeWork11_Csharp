@@ -13,10 +13,12 @@ namespace Myprogramm
             int[] Array  = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
             int FirstMax = Array[0];
             int SecondMax = Array[0];
+            int ThirdMax = Array[0];
             for (int i = 1; i < Array.Length; i++)
             {
                 if (Math.Abs(Array[i]) > Math.Abs(FirstMax))
                 {
+                    ThirdMax = SecondMax;
                     SecondMax = FirstMax;
                     FirstMax = Array[i];
                     
@@ -25,10 +27,13 @@ namespace Myprogramm
                 {
                     SecondMax= Array[i];
                 }
+                else if((Math.Abs(Array[i]) > Math.Abs(ThirdMax)&& Math.Abs(ThirdMax)<Math.Abs(SecondMax) &&Math.Abs(ThirdMax)<Math.Abs(FirstMax)))
+                {
+                    ThirdMax = Array[i];
+                }
             }
-           
-            Console.WriteLine($"{FirstMax} {SecondMax}");  // не знаю в чем прикол но все работает правильно вроде 
-        }                                                  // но кодфорс говорит что ошибка
+            Console.WriteLine($"{FirstMax} {SecondMax} {ThirdMax}");  
+        }                                                 
     }
 
 }

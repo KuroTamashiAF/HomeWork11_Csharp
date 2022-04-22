@@ -6,7 +6,7 @@ namespace Myprogramm
 {
     class Programm
     {
-        static int MinElement(int[] arr)
+        static int MaxElement(int[] arr)
         {
             int Max = arr[0];
             for (int i = 1; i < arr.Length; i++)
@@ -24,7 +24,7 @@ namespace Myprogramm
         {
             int N = Convert.ToInt32(Console.ReadLine());
             int[] Array = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-            int Max = MinElement(Array);
+            int Max = MaxElement(Array);
             Console.WriteLine(Max);
 
         }
